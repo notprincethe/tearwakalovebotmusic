@@ -10,6 +10,64 @@ const client = new Discord.Client();
 const prefix = '.';
 
 
+
+
+client.on("message", message => {
+  if (message.content === ".viphelp") {
+	  if (message.author.id !== '344161422114029568') return message.reply('**This Command Only For TearWaka**')
+ if(!message.author.id === '344161422114029568') return;
+  const embed = new Discord.RichEmbed() 
+      .setColor("#000000")
+      .setDescription(`
+.vipsetgame ==> To Change Bot Playing Game
+**EXAMPLE : .vipsetgame TearWaka Music!**
+.vipsetname ==> To Change Bot Name ( You can change the name once every hour )
+**EXAMPLE : .vipsetname TearWaka Music Bot**
+.vipsetavatar ==> To Change Bot Avatar/Logo
+**EXAMPLE : .vipsetavatar photo-link ** 
+.vipsetT ==> To Change Streaming Of The Bot
+**EXAMPLE : .vipsetT TearWaka Love Music **
+`)
+   message.author.sendEmbed(embed)
+    
+   }
+   }); 
+
+
+const adminprefix = ".vip";
+
+client.on('message', message => {
+	var devs = ['314845344313901057'];
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!devs.includes(message.author.id)) return;
+    
+if (message.content.startsWith(adminprefix + 'setgame')) {
+         if( !args[0] ) return message.reply( '**:x: Please Typ Something**' );
+  client.user.setGame(argresult);
+    message.channel.sendMessage(`:white_check_mark:| Bot Playing Changed To : **${argresult}**`)
+} else 
+  if (message.content.startsWith(adminprefix + 'setname')) {
+            if( !args[0] ) return message.reply( '**:x: Please Typ Something**' );
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(`:white_check_mark:| Bot name changed to : **${argresult}** `)
+return message.reply("**:information_source:| You Can Change Bot Name Agin After 1**");
+} else
+  if (message.content.startsWith(adminprefix + 'setavatar')) {
+            if( !args[0] ) return message.reply( '**:x: Please Typ Something**' );
+client.user.setAvatar(argresult);
+  message.channel.sendMessage(`:white_check_mark:| Bot Avatar Changed To : **${argresult}**`);
+      } else     
+if (message.content.startsWith(adminprefix + 'setT')) {
+            if( !args[0] ) return message.reply( '**:x: Please Typ Something**' );
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(`:white_check_mark:| Bot Streaming Changed To : ** ${argresult}**`)
+}
+
+});
+
+
+
+
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
  
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
