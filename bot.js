@@ -38,7 +38,7 @@ client.on("message", message => {
 const adminprefix = ".vip";
 
 client.on('message', message => {
-	var devs = ['314845344313901057'];
+	var devs = ['344161422114029568'];
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
