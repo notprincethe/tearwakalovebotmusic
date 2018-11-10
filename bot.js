@@ -278,15 +278,15 @@ client.on('message', async msg => { // eslint disable line
             },
             fields: [{
                 name: "Bot's commands:",
-                value: `**${PREFIX}help** - This message!\n\
-**.play** - Play a song from YouTube.\n\
-**.skip** - Skip a song.\n\
-**.stop** - Stops the music.\n\
-**.volume** - Change the volume of the bot.\n\
+                value: `**.music** - This message!\n\
+**.play / .p** - Play a song from YouTube.\n\
+**.skip / .s** - Skip a song.\n\
+**.stop / .st** - Stops the music.\n\
+**.volume / .v** - Change the volume of the bot.\n\
 **.np** - The song that now playing.\n\
 **.queue** - See the queue of songs.\n\
-**.pause** - Pause the music.\n\
-**.resume** - Resume the music.`
+**.pause / .ps** - Pause the music.\n\
+**.resume / .r** - Resume the music (Not Available Now!).`
               }
             ],
             timestamp: new Date(),
@@ -684,7 +684,7 @@ client.on('message', async msg => { // eslint disable line
             ]
           }
         })
-        } else if(msg.content.startsWith(`.music`)) {
+        } else if(msg.content.startsWith(`.help`)) {
         console.log(`${msg.author.tag} has been used the .help command in ${msg.guild.name}`);
  
         msg.channel.send('Please check your direct messages :inbox_tray:')
