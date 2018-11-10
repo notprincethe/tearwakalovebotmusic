@@ -341,7 +341,7 @@ client.on('message', async msg => { // eslint disable line
             fields: [{
                 name: "Bot's commands:",
                 value: `**.music** - This message!\n\
-**.play / .p** - Play a song from YouTube.\n\
+**.play / .py** - Play a song from YouTube.\n\
 **.skip / .s** - Skip a song.\n\
 **.stop / .st** - Stops the music.\n\
 **.volume / .vol** - Change the volume of the bot.\n\
@@ -507,7 +507,7 @@ client.on('message', async msg => { // eslint disable line
     const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
     const serverQueue = queue.get(msg.guild.id);
  
-    if (msg.content.startsWith(`.p`)) {
+    if (msg.content.startsWith(`.py`)) {
         console.log(`${msg.author.tag} has been used the .play command in ${msg.guild.name}`);
  
         const voiceChannel = msg.member.voiceChannel;
@@ -762,7 +762,7 @@ client.on('message', async msg => { // eslint disable line
             fields: [{
                 name: "Bot's commands:",
                 value: `**.help** - This message!\n\
-**.play / .p** - Play a song from YouTube.\n\
+**.play / .py** - Play a song from YouTube.\n\
 **.skip / .s** - Skip a song.\n\
 **.stop / .st** - Stops the music.\n\
 **.volume / .vol** - Change the volume of the bot.\n\
