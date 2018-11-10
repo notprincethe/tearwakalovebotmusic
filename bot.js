@@ -43,23 +43,23 @@ client.on('message', message => {
     if (!devs.includes(message.author.id)) return;
     
 if (message.content.startsWith(adminprefix + 'setgame')) {
-         if( !args[0] ) return message.reply( '**:x: Please Typ Something**' );
+         if( !argresult[0] ) return message.reply( '**:x: Please Typ Something**' );
   client.user.setGame(argresult);
     message.channel.sendMessage(`:white_check_mark:| Bot Playing Changed To : **${argresult}**`)
 } else 
   if (message.content.startsWith(adminprefix + 'setname')) {
-            if( !args[0] ) return message.reply( '**:x: Please Typ Something**' );
+            if( !argresult[0] ) return message.reply( '**:x: Please Typ Something**' );
 client.user.setUsername(argresult).then
     message.channel.sendMessage(`:white_check_mark:| Bot name changed to : **${argresult}** `)
 return message.reply("**:information_source:| You Can Change Bot Name Agin After 1**");
 } else
   if (message.content.startsWith(adminprefix + 'setavatar')) {
-            if( !args[0] ) return message.reply( '**:x: Please Typ Something**' );
+            if( !argresult[0] ) return message.reply( '**:x: Please Typ Something**' );
 client.user.setAvatar(argresult);
   message.channel.sendMessage(`:white_check_mark:| Bot Avatar Changed To : **${argresult}**`);
       } else     
 if (message.content.startsWith(adminprefix + 'setT')) {
-            if( !args[0] ) return message.reply( '**:x: Please Typ Something**' );
+            if( !argresult[0] ) return message.reply( '**:x: Please Typ Something**' );
   client.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`:white_check_mark:| Bot Streaming Changed To : ** ${argresult}**`)
 }
