@@ -75,6 +75,8 @@ client.on('reconnecting', () => console.log('I am reconnecting now!'));
  
 var ffmpeg = require('ffmpeg');
 
+
+
 client.on('message', async msg => { // eslint disable line
     var prefix = '.';
     if (msg.author.bot) return undefined;
@@ -324,7 +326,7 @@ client.on('message', async msg => { // eslint disable line
           }
         })
         } else if(msg.content.startsWith(`.music`)) {
-        console.log(`${msg.author.tag} has been used the ${PREFIX}help command in ${msg.guild.name}`);
+        console.log(`${msg.author.tag} has been used the .music command in ${msg.guild.name}`);
  
         msg.channel.send('Please check your direct messages :inbox_tray:')
  
@@ -342,7 +344,7 @@ client.on('message', async msg => { // eslint disable line
 **.play / .p** - Play a song from YouTube.\n\
 **.skip / .s** - Skip a song.\n\
 **.stop / .st** - Stops the music.\n\
-**.volume / .v** - Change the volume of the bot.\n\
+**.volume / .vol** - Change the volume of the bot.\n\
 **.np** - The song that now playing.\n\
 **.queue** - See the queue of songs.\n\
 **.pause / .ps** - Pause the music.\n\
@@ -352,7 +354,7 @@ client.on('message', async msg => { // eslint disable line
             timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "Premuim Music"
+              text: "TearWaka Music :hearts: "
             }
           }
         });
@@ -660,7 +662,7 @@ client.on('message', async msg => { // eslint disable line
         serverQueue.songs = [];
         serverQueue.connection.dispatcher.end('Stop command has been used!');
         return undefined;
-    } else if (msg.content.startsWith(`.v`)) {
+    } else if (msg.content.startsWith(`.vol`)) {
         console.log(`${msg.author.tag} has been used the .volume command in ${msg.guild.name}`);
         if (!msg.member.voiceChannel) return msg.channel.send({embed: {
             color: 15158332,
@@ -763,7 +765,7 @@ client.on('message', async msg => { // eslint disable line
 **.play / .p** - Play a song from YouTube.\n\
 **.skip / .s** - Skip a song.\n\
 **.stop / .st** - Stops the music.\n\
-**.volume / .v** - Change the volume of the bot.\n\
+**.volume / .vol** - Change the volume of the bot.\n\
 **.np / n** - The song that now playing.\n\
 **.queue / q** - See the queue of songs.\n\
 **.pause / .ps** - Pause the music.\n\
@@ -773,7 +775,7 @@ client.on('message', async msg => { // eslint disable line
             timestamp: new Date(),
             footer: {
               icon_url: client.user.avatarURL,
-              text: "Premuim Music"
+              text: "TearWaka Music :hearts:"
             }
           }
         });
