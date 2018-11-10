@@ -325,10 +325,10 @@ client.on('message', async msg => { // eslint disable line
             ]
           }
         })
-        } else if(msg.content.startsWith(`.music`)) {
-        console.log(`${msg.author.tag} has been used the .music command in ${msg.guild.name}`);
+        } else if(msg.content.startsWith(`.help`)) {
+        console.log(`${msg.author.tag} has been used the .help command in ${msg.guild.name}`);
  
-        msg.channel.send('Please check your direct messages :inbox_tray:')
+        msg.channel.send('**Please check your direct messages** :inbox_tray:')
  
         msg.react('✅');
  
